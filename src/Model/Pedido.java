@@ -3,6 +3,7 @@ package Model;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import DTO.ClienteDTO;
 import Enums.StatusPedido;
 
 public class Pedido {
@@ -13,14 +14,14 @@ public class Pedido {
 	private BigDecimal total;
 	private StatusPedido status;
 	private EnderecoEntregaPedido endereco;
-	private Cliente cliente;
+	private ClienteDTO clienteDTO;
 	private NotaFiscal notaFiscal;
 	private ArrayList<ItemPedido> itensPedido = new ArrayList<>();
 	private Pagamento pagamento;
 	
 	public Pedido(int id, LocalDateTime dataCriacao, LocalDateTime dataUltimaAtualizacao,
 			LocalDateTime dataConclusao, BigDecimal total, StatusPedido status,
-			EnderecoEntregaPedido endereco, Cliente cliente, NotaFiscal notaFiscal,
+			EnderecoEntregaPedido endereco, ClienteDTO clienteDTO, NotaFiscal notaFiscal,
 			Pagamento pagamento) {
 		this.id = id;
 		this.dataCriacao = dataCriacao;
@@ -29,7 +30,7 @@ public class Pedido {
 		this.total = total;
 		this.status = status;
 		this.endereco = endereco;
-		this.cliente = cliente;
+		this.clienteDTO = clienteDTO;
 		this.notaFiscal = notaFiscal;
 		this.pagamento = pagamento;
 	}
@@ -75,11 +76,11 @@ public class Pedido {
 	public void setEndereco(EnderecoEntregaPedido endereco) {
 		this.endereco = endereco;
 	}
-	public Cliente getCliente() {
-		return cliente;
+	public ClienteDTO getClienteDTO() {
+		return clienteDTO;
 	}
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setCliente(ClienteDTO clienteDTO) {
+		this.clienteDTO = clienteDTO;
 	}
 	public NotaFiscal getNotaFiscal() {
 		return notaFiscal;

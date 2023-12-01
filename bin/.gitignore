@@ -1,4 +1,9 @@
-/View/
 /Controller/
-/Model/
+/View/
+/Interface/
+/Ouvintes/
 /Enums/
+/Model/
+/DAO/
+/DTO/
+/ElementosGraficos/

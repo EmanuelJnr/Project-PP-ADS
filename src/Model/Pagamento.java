@@ -8,7 +8,6 @@ public class Pagamento {
 	private Pedido pedido;
 	
 	public Pagamento(int id, StatusPagamento status, Pedido pedido) {
-		super();
 		this.id = id;
 		this.status = status;
 		this.pedido = pedido;

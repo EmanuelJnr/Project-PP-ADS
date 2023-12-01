@@ -1,28 +1,31 @@
-package Model;
+package DAO;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Map;
 import Enums.SexoCliente;
+import Model.Pedido;
 
-public class Cliente {
+public class ClienteDAO implements ClienteDAOImpl{
 	private int id;
 	private String nome;
 	private String primeiroNome;
 	private String CPF;
 	private Map<String,String> contato;
+	private String email;
 	private LocalDateTime dataNascimento;
 	private SexoCliente sexo;
 	private ArrayList<Pedido> pedidos = new ArrayList<>();
 
-	public Cliente(int id, String nome, String primeiroNome, String cPF,
-			Map<String, String> contato, LocalDateTime dataNascimento,
-			SexoCliente sexo) {
+	public ClienteDAO(int id, String nome, String primeiroNome, String CPF,
+			Map<String, String> contato, String email,
+			LocalDateTime dataNascimento, SexoCliente sexo) {
 		this.id = id;
 		this.nome = nome;
 		this.primeiroNome = primeiroNome;
-		CPF = cPF;
+		this.CPF = CPF;
 		this.contato = contato;
+		this.email = email;
 		this.dataNascimento = dataNascimento;
 		this.sexo = sexo;
 	}
@@ -50,14 +53,20 @@ public class Cliente {
 	public String getCPF() {
 		return CPF;
 	}
-	public void setCPF(String cPF) {
-		CPF = cPF;
+	public void setCPF(String CPF) {
+		this.CPF = CPF;
 	}
 	public Map<String, String> getContato() {
 		return contato;
 	}
 	public void setContato(Map<String, String> contato) {
 		this.contato = contato;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	public LocalDateTime getDataNascimento() {
 		return dataNascimento;

@@ -6,15 +6,13 @@ public class ItemPedido {
 	private BigDecimal precoProduto;
 	private int quantidade;
 	private Pedido pedido;
-	private ItemPedidoId itemPedidoId;
 	private Produto produto;
 	
 	public ItemPedido(BigDecimal precoProduto, int quantidade, Pedido pedido,
-			ItemPedidoId itemPedidoId, Produto produto) {
+			Produto produto) {
 		this.precoProduto = precoProduto;
 		this.quantidade = quantidade;
 		this.pedido = pedido;
-		this.itemPedidoId = itemPedidoId;
 		this.produto = produto;
 	}
 	public BigDecimal getPrecoProduto() {
@@ -34,12 +32,6 @@ public class ItemPedido {
 	}
 	public void setPedido(Pedido pedido) {
 		this.pedido = pedido;
-	}
-	public ItemPedidoId getItemPedidoId() {
-		return itemPedidoId;
-	}
-	public void setItemPedidoId(ItemPedidoId itemPedidoId) {
-		this.itemPedidoId = itemPedidoId;
 	}
 	public Produto getProduto() {
 		return produto;
